@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import styles from './StoreList.module.css'
 
 const TIER_LABELS = { 1: 'Tier 1', 2: 'Tier 2', 3: 'Tier 3' }
@@ -61,13 +61,6 @@ export default function StoreList() {
 
   function handleRowClick(id) {
     navigate(`/stores/${id}`)
-  }
-
-  function handleRowKeyDown(e, id) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault()
-      navigate(`/stores/${id}`)
-    }
   }
 
   return (
@@ -158,12 +151,10 @@ export default function StoreList() {
                       key={store.id}
                       className={styles.row}
                       onClick={() => handleRowClick(store.id)}
-                      onKeyDown={(e) => handleRowKeyDown(e, store.id)}
-                      tabIndex={0}
-                      role="button"
-                      aria-label={`View details for ${store.name}`}
                     >
-                      <td className={styles.nameCell}>{store.name}</td>
+                      <td className={styles.nameCell}>
+                        <Link to={`/stores/${store.id}`} className={styles.nameLink}>{store.name}</Link>
+                      </td>
                       <td>{store.address}</td>
                       <td className={styles.capitalize}>{store.channel}</td>
                       <td>{store.territory}</td>

@@ -72,7 +72,7 @@ export default function StoreDetail() {
               <dt>Active</dt>
               <dd>{store.active ? 'Yes' : 'No'}</dd>
             </div>
-            {store.latitude != null && (
+            {store.latitude != null && store.longitude != null && (
               <div className={styles.row}>
                 <dt>Coordinates</dt>
                 <dd>{store.latitude.toFixed(5)}, {store.longitude.toFixed(5)}</dd>
