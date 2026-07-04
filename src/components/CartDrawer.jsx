@@ -1,10 +1,14 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import styles from './CartDrawer.module.css'
+
+const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])'
 
 export default function CartDrawer({ open, onClose, cartVersion }) {
   const [cart, setCart] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const closeBtnRef = useRef(null)
+  const drawerRef = useRef(null)
 
   const fetchCart = useCallback(async () => {
     setLoading(true)
@@ -26,12 +30,44 @@ export default function CartDrawer({ open, onClose, cartVersion }) {
     if (open) fetchCart()
   }, [open, cartVersion, fetchCart])
 
-  // Close on Escape key
+  // Move focus into the drawer when it opens (WCAG 2.4.3)
+  useEffect(() => {
+    if (open && closeBtnRef.current) {
+      closeBtnRef.current.focus()
+    }
+  }, [open])
+
+  // Close on Escape key + trap focus inside the drawer
   useEffect(() => {
     if (!open) return
+
     function handleKey(e) {
-      if (e.key === 'Escape') onClose()
+      if (e.key === 'Escape') {
+        onClose()
+        return
+      }
+      if (e.key !== 'Tab') return
+
+      const drawer = drawerRef.current
+      if (!drawer) return
+      const focusable = Array.from(drawer.querySelectorAll(FOCUSABLE))
+      if (focusable.length === 0) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
     }
+
     document.addEventListener('keydown', handleKey)
     return () => document.removeEventListener('keydown', handleKey)
   }, [open, onClose])
@@ -47,6 +83,7 @@ export default function CartDrawer({ open, onClose, cartVersion }) {
 
       {/* Drawer panel */}
       <aside
+        ref={drawerRef}
         className={`${styles.drawer} ${open ? styles.drawerOpen : ''}`}
         role="dialog"
         aria-modal="true"
@@ -54,7 +91,7 @@ export default function CartDrawer({ open, onClose, cartVersion }) {
       >
         <div className={styles.header}>
           <h2 className={styles.title}>Your Cart</h2>
-          <button className={styles.closeBtn} onClick={onClose} aria-label="Close cart">
+          <button ref={closeBtnRef} className={styles.closeBtn} onClick={onClose} aria-label="Close cart">
             ✕
           </button>
         </div>
