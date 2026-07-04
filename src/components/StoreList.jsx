@@ -151,6 +151,13 @@ export default function StoreList() {
                       key={store.id}
                       className={styles.row}
                       onClick={() => handleRowClick(store.id)}
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault()
+                          handleRowClick(store.id)
+                        }
+                      }}
                     >
                       <td className={styles.nameCell}>
                         <Link to={`/stores/${store.id}`} className={styles.nameLink}>{store.name}</Link>

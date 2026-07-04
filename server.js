@@ -168,7 +168,7 @@ app.get('/stores', (req, res) => {
 app.get('/stores/:id', (req, res) => {
   const id = parseInt(req.params.id, 10)
   const store = stores.find((s) => s.id === id)
-  if (!store) {
+  if (!store || !store.active) {
     return res.status(404).json({ error: 'Store not found' })
   }
   res.json(store)
