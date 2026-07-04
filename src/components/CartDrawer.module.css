@@ -1,0 +1,157 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 200;
+}
+
+.backdropVisible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 420px;
+  max-width: 100vw;
+  background: #fff;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  z-index: 300;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #555;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.closeBtn:hover,
+.closeBtn:focus-visible {
+  background: #f0f0f0;
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.25rem;
+}
+
+.message {
+  color: #666;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.contents {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  padding: 0.6rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table thead th {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.numCol {
+  text-align: right !important;
+}
+
+.totalRow th,
+.totalRow td {
+  font-weight: 700;
+  font-size: 1rem;
+  border-top: 2px solid #1a1a1a;
+  border-bottom: none;
+  padding-top: 0.75rem;
+}
+
+.footer {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.checkoutBtn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.checkoutBtn:hover:not(:disabled) {
+  background: #333;
+}
+
+.checkoutBtn:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 3px;
+}
+
+.checkoutBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
