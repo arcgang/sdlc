@@ -1,0 +1,52 @@
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.price {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.addBtn {
+  margin-top: auto;
+  padding: 0.5rem 0.75rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.addBtn:hover:not(:disabled) {
+  background: #333;
+}
+
+.addBtn:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+.addBtn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
