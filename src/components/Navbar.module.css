@@ -1,0 +1,72 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 56px;
+  background: #1a1a1a;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+.nav {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.navLink.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.cartBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.15s;
+}
+
+.cartBtn:hover,
+.cartBtn:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}

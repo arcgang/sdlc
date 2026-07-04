@@ -1,0 +1,124 @@
+.page {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  margin-bottom: 1.5rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.backBtn:hover {
+  color: #1a1a1a;
+}
+
+.backBtn:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.status {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 1.75rem;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* ── Definition list ──────────────────────────────────────── */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 0.5rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.details dt {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 0.1rem;
+}
+
+.details dd {
+  font-size: 0.95rem;
+  color: #1a1a1a;
+}
+
+/* ── Priority tier badges ─────────────────────────────────── */
+.tierBadge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tierRed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.tierAmber {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.tierGreen {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.never {
+  color: #aaa;
+  font-style: italic;
+}

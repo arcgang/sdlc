@@ -1,0 +1,192 @@
+.page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Controls bar ────────────────────────────────────────── */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.searchInput {
+  flex: 1 1 220px;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.searchInput:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+.select {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+  cursor: pointer;
+}
+
+.select:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: 2px;
+}
+
+/* ── Tier multi-select checkboxes ────────────────────────── */
+.tierFieldset {
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem 0.3rem 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+}
+
+.tierLegend {
+  font-size: 0.8rem;
+  color: #555;
+  padding: 0 0.25rem;
+  float: left;
+  margin-right: 0.5rem;
+  /* keep legend inline with checkboxes */
+  position: static;
+}
+
+.tierLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.tierLabel input[type='checkbox'] {
+  cursor: pointer;
+}
+
+/* ── Priority tier badges ─────────────────────────────────── */
+.tierBadge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tierRed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.tierAmber {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.tierGreen {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ── Result count ─────────────────────────────────────────── */
+.count {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Table ────────────────────────────────────────────────── */
+.tableWrapper {
+  overflow-x: auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table thead tr {
+  background: #f9f9f9;
+}
+
+.table th {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #e5e5e5;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #222;
+  vertical-align: middle;
+}
+
+.row {
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.row:hover {
+  background: #f5f5f5;
+}
+
+.row:focus-visible {
+  outline: 2px solid #1a1a1a;
+  outline-offset: -2px;
+}
+
+.row:last-child td {
+  border-bottom: none;
+}
+
+.nameCell {
+  font-weight: 600;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.never {
+  color: #aaa;
+  font-style: italic;
+}
+
+.empty {
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+}
+
+.status {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
